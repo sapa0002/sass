@@ -1,0 +1,311 @@
+
+//Use SASS to write your CSS
+//SASS files are:
+//
+//main.scss
+//which will import:
+//
+//normalize.scss
+//variables.scss
+//mixins.scss
+//sticky-footer.scss
+//
+//You may divide your sass into addition files as you wish.
+//Eg: 
+//- grid.scss
+//- buttons.scss
+
+@import 'mixins';
+@import 'variables';
+
+/* =========== main style =========== */
+.wrapper
+{
+	overflow:auto;
+	background-color: rgba(223,191,92,0.7); // #dfbf5c  ;
+}
+
+
+.box p
+{
+	margin:0 4% 4% 4%;
+	text-align: left;
+}
+
+.masthead
+{
+	width: 100%;
+	background-color: #484848 ;
+	text-align: center;
+	color: #dddddd  ;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	@include pagefont;
+	box-shadow: 0 0 5px #fff;
+}
+.focal
+{
+	height: auto;
+}
+.row
+{
+	float: left;
+	display: flex;
+//	flex-flow: row nowrap; /* is default: columns along the main-axis (row) and no wrapping to next lines */
+//  align-items: flex-end; /* bottom */
+	margin-right: 2%;
+	
+//	position: relative;
+//	min-height:100%; 
+}
+
+.col-3
+{
+	flex: 1;
+	@include fMargin;
+	padding-top: 2%;
+	background-color: rgba(60,155,102,0.7); //#3c9b66;
+
+	//@include gradient-col3;
+	width: $col-3-width;
+	float: left;
+	border-radius: 5px;
+//	background-color: grey;
+	color: #484848 ;
+	text-align: center;
+	
+	background-color: rgba(60,155,102,0.7); //#3c9b66;
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: pointer;
+   
+//	background: #fff url(../img/script.svg) no-repeat center center;
+//	background-size:contain;
+//	background-position:50% 50%;
+	
+	@include pagefont;
+	@include fade-transition(background);	
+	
+}
+.col-4
+{
+	flex: 1;	
+	@include fMargin;
+	background-color: rgba(60,155,102,0.7); //5f98c6; 
+	//@include gradient-col4;
+	width: $col-4-width;
+//	float: left;
+	margin-bottom: 2%;
+	border-radius: 5px;
+	color: #484848 ;
+	text-align: center;
+	@include pagefont;
+	border: 5px solid #fff;
+	
+	@include fade-transition(background);
+
+}
+
+.btn
+{
+	@include buttonGradient;
+	margin-bottom: 5%;
+//	width: 70%;
+//	margin-left: 15%;
+//	margin-right: 15%
+}
+
+.btn:hover{
+	-webkit-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
+     -khtml-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
+       -moz-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
+         -o-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
+            box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
+	
+	color:#fff;
+    background-position:0 0, 0 0;
+    -webkit-transition-duration:0.3s;
+       -moz-transition-duration:0.3s;
+            transition-duration:0.3s;
+}
+
+.col-4:hover,
+.col-3:hover
+{
+	background-color: rgba(95,152,198,0.9);
+}
+
+
+.swing{
+	-webkit-animation:swinging 10s ease-in-out 0s infinite;
+	-moz-animation:swinging 10s ease-in-out 0s infinite;
+	animation:swinging 10s ease-in-out 0s infinite;
+	-webkit-transform-origin:50% 0;
+	-moz-transform-origin:50% 0;
+	transform-origin:50% 0;
+}
+
+@-webkit-keyframes swinging{
+	0% { -webkit-transform: rotate(0); }
+	20% { -webkit-transform: rotate(7deg); }
+	40% { -webkit-transform: rotate(-5deg); }
+	60% { -webkit-transform: rotate(3deg); }
+	80% { -webkit-transform: rotate(-1); } /* Come to rest at 50%. The rest is just stillness */
+	100% { -webkit-transform: rotate(0); }
+}
+
+@-moz-keyframes swinging{
+	
+	0% { -moz-transform: rotate(0); }
+	20% { -moz-transform: rotate(7deg); }
+	40% { -moz-transform: rotate(-5deg); }
+	60% { -moz-transform: rotate(3deg); }
+	80% { -moz-transform: rotate(-1); } /* Come to rest at 50%. The rest is just stillness */
+	100% { -moz-transform: rotate(0); }
+}
+
+@keyframes swinging{
+
+	0% { transform: rotate(0); }
+	20% { transform: rotate(7deg); }
+	40% { transform: rotate(-5deg); }
+	60% { transform: rotate(3deg); }
+	80% { transform: rotate(-1); } /* Come to rest at 50%. The rest is just stillness */
+	100% { transform: rotate(0); }
+}
+
+.col-3:hover > .iconic
+{
+	//Animation delay
+	animation-delay: 0.05s;
+	-webkit-animation-delay: 0.05s;
+	-moz-animation-delay: 0.05s;
+	animation-delay: 0.05s;
+	
+	//Add key frame animation for swinging
+	-webkit-animation:swinging 1s ease-in-out 0s infinite;
+	-moz-animation:swinging 1s ease-in-out 0s infinite;
+	animation:swinging 1s ease-in-out 0s infinite;
+	-webkit-transform-origin:50% 0;
+	-moz-transform-origin:50% 0;
+	transform-origin:50% 0;
+
+	//Run the keyframe animation only once
+	-webkit-animation: swinging 0.5s normal forwards; 
+  	-moz-animation:  swinging 0.5s normal forwards;
+  	-o-animation:  swinging 0.5s normal forwards;
+}
+
+.col-3 img {
+    display: block;
+    position: relative;
+	
+	transition: all 0.2s linear;
+    width: 80%;
+	margin: 10%;
+    height: 100%;
+}
+.col-3 h3 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    //font-family: Raleway, serif;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px 0 0 0;
+	
+	transform: translateY(-100px);
+    opacity: 0;
+//    font-family: Raleway, serif;
+    transition: all 0.2s ease-in-out;
+}
+.col-3 p {
+    //font-family: Merriweather, serif;
+    //font-style: italic;
+    font-size: 14px;
+    position: relative;
+    color: #fff;
+//    padding: 0px 20px 0px;
+	padding-top: 2%;
+    text-align: center;
+	
+	transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+.col-3 a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    color: #fff;
+    font-family: Raleway, serif;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px #000;
+	opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+.col-3 a.info:hover {
+    box-shadow: 0 0 5px #000;
+}
+/* */
+
+.col-3:hover img { 
+    transform: scale(1.1);
+} 
+.col-3:hover .mask { 
+    opacity: 1;
+}
+.col-3:hover h3,
+.col-3:hover p,
+.col-3:hover a.info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+.col-3:hover p {
+    transition-delay: 0.1s;
+}
+.col-3:hover a.info {
+    transition-delay: 0.2s;
+}
+
+///
+
+/******** responsive layout *******/
+
+@media screen and (min-width: $breakpoint-mobile){
+  .container{
+    max-width: $breakpoint-mobile;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $breakpoint-small){
+  .container{
+    max-width: $breakpoint-small;
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium){
+  .container{
+    max-width: $breakpoint-medium;
+  }
+}
+
+@media screen and (min-width: $breakpoint-large){
+  .container{
+    max-width: $breakpoint-large;
+  }
+}
+
+/* =========== sticky footer =========== */
+
+@import 'sticky-footer';
+
+/* =========== normalize style =========== */
+
+@import 'normalize';

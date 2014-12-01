@@ -1,0 +1,134 @@
+
+/*<!--//Use SASS to write your CSS
+//SASS files are:
+//
+//main.scss
+//which will import:
+//
+//normalize.scss
+//variables.scss
+//mixins.scss
+//sticky-footer.scss
+//
+//You may divide your sass into addition files as you wish.
+//Eg: 
+//- grid.scss
+//- buttons.scss-->*/
+
+@import 'mixins';
+@import 'variables';
+
+.wrapper
+{
+	overflow:auto;
+	background-color: rgba(223,191,92,0.7); // #dfbf5c  ;
+}
+
+
+.box p
+{
+	margin:0 4% 4% 4%;
+	text-align: left;
+}
+
+.masthead
+{
+	width: 100%;
+	background-color: #484848 ;
+	text-align: center;
+	color: #dddddd  ;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	@include pagefont;
+	box-shadow: 0 0 5px #fff;
+}
+//.focal
+//{
+//	height: auto;
+//}
+.row
+{
+	float: left;
+	display: flex;
+	margin-right: 2%;
+}
+
+.col-3
+{
+	flex: 1;
+	@include fMargin;
+	padding-top: 2%;
+	background-color: rgba(60,155,102,0.7); //#3c9b66;
+	width: $col-3-width;
+	float: left;
+	border-radius: 5px;
+
+	color: #484848 ;
+	text-align: center;
+	
+	background-color: rgba(60,155,102,0.7); //#3c9b66;
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: pointer;
+	
+	@include pagefont;
+	@include fade-transition(background);	
+	
+}
+.col-4
+{
+	flex: 1;	
+	@include fMargin;
+	background-color: rgba(60,155,102,0.7); //5f98c6; 
+	
+	width: $col-4-width;
+
+	margin-bottom: 2%;
+	border-radius: 5px;
+	color: #484848 ;
+	text-align: center;
+	@include pagefont;
+	border: 5px solid #fff;
+	
+	@include fade-transition(background);
+
+}
+
+/******** responsive layout *******/
+
+@media screen and (min-width: $breakpoint-mobile){
+  .container{
+    max-width: $breakpoint-mobile;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: $breakpoint-small){
+  .container{
+    max-width: $breakpoint-small;
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium){
+  .container{
+    max-width: $breakpoint-medium;
+  }
+}
+
+@media screen and (min-width: $breakpoint-large){
+  .container{
+    max-width: $breakpoint-large;
+  }
+}
+
+/* =========== sticky footer =========== */
+
+@import 'sticky-footer';
+
+/* =========== normalize style =========== */
+
+@import 'normalize';
+
+

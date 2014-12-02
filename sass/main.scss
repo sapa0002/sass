@@ -1,5 +1,4 @@
-
-//Use SASS to write your CSS
+/*<!--//Use SASS to write your CSS
 //SASS files are:
 //
 //main.scss
@@ -7,22 +6,21 @@
 //
 //normalize.scss
 //variables.scss
-//mixins.scss
+//mixins.scss		
 //sticky-footer.scss
 //
 //You may divide your sass into addition files as you wish.
 //Eg: 
 //- grid.scss
-//- buttons.scss
+//- buttons.scss-->*/
 
 @import 'mixins';
 @import 'variables';
 
-/* =========== main style =========== */
 .wrapper
 {
 	overflow:auto;
-	background-color: rgba(223,191,92,0.7); // #dfbf5c  ;
+	background-color: rgba(300,150,190,0.8); // #dfbf5c  ;
 }
 
 
@@ -35,106 +33,169 @@
 .masthead
 {
 	width: 100%;
-	background-color: #484848 ;
+	background-color: #404040 ;
 	text-align: center;
 	color: #dddddd  ;
-	padding-bottom: 1px;
-	padding-top: 1px;
-	@include pagefont;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	@include fonts;
 	box-shadow: 0 0 5px #fff;
 }
-.focal
-{
-	height: auto;
-}
+
 .row
 {
 	float: left;
 	display: flex;
-//	flex-flow: row nowrap; /* is default: columns along the main-axis (row) and no wrapping to next lines */
-//  align-items: flex-end; /* bottom */
 	margin-right: 2%;
-	
-//	position: relative;
-//	min-height:100%; 
 }
 
-.col-3
+#box1
 {
+    @include fonts;
+	@include elementEaseInOut(background);
 	flex: 1;
-	@include fMargin;
+	@include margin_total;
 	padding-top: 2%;
-	background-color: rgba(60,155,102,0.7); //#3c9b66;
-
-	//@include gradient-col3;
-	width: $col-3-width;
+	background-color: rgba(160,55,100,0.7);
+	width: $width_box1;
 	float: left;
 	border-radius: 5px;
-//	background-color: grey;
+
 	color: #484848 ;
 	text-align: center;
 	
-	background-color: rgba(60,155,102,0.7); //#3c9b66;
     border: 10px solid #fff;
     overflow: hidden;
     position: relative;
     box-shadow: 1px 1px 2px #e6e6e6;
     cursor: pointer;
-   
-//	background: #fff url(../img/script.svg) no-repeat center center;
-//	background-size:contain;
-//	background-position:50% 50%;
 	
-	@include pagefont;
-	@include fade-transition(background);	
+
+}
+
+#box2
+{   
+    @include fonts;
+	@include elementEaseInOut(background);
+	flex: 1;
+	@include margin_total;
+	padding-top: 2%;
+	background-color: rgba(160,55,100,0.7); 
+	width: $width_box2;
+	float: left;
+	border-radius: 5px;
+
+	color: #484848 ;
+	text-align: center;
+
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 2px 2px #e6e6e6;
+    cursor: pointer;
+	
+	
+}      
+
+#box3
+{
+    @include fonts;
+	@include elementEaseInOut(background);
+	flex: 1;
+	@include margin_total;
+	padding-top: 2%;
+	background-color: rgba(160,55,100,0.7);
+	width: $width_box3;
+	float: left;
+	border-radius: 5px;
+
+	color: #484848 ;
+	text-align: center;
+
+    border: 10px solid #fff;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 2px 2px #e6e6e6;
+    cursor: pointer;
+		
 	
 }
-.col-4
-{
+
+
+#box4
+{	
+	@include elementEaseInOut(background);
 	flex: 1;	
-	@include fMargin;
+	@include margin_total;
 	background-color: rgba(60,155,102,0.7); //5f98c6; 
-	//@include gradient-col4;
-	width: $col-4-width;
-//	float: left;
+	
+	width: $width_box4;
+
 	margin-bottom: 2%;
 	border-radius: 5px;
 	color: #484848 ;
 	text-align: center;
-	@include pagefont;
+	@include fonts;
+	border: 5px solid #fff;
+
+}
+
+#box5
+{
+     	
+	@include elementEaseInOut(background);
+    flex: 1;	
+	@include margin_total;
+	background-color: rgba(60,155,102,0.7); //5f98c6; 
+	
+	width: $width_box5;
+
+	margin-bottom: 2%;
+	border-radius: 5px;
+	color: #484848 ;
+	text-align: center;
+	@include fonts;
+	border: 5px solid #fff;
+
+}
+
+#box6
+{
+	@include elementEaseInOut(background);
+	flex: 1;	
+	@include margin_total;
+	background-color: rgba(60,155,102,0.7); //5f98c6; 
+	
+	width: $width_box6;
+
+	margin-bottom: 2%;
+	border-radius: 5px;
+	color: #484848 ;
+	text-align: center;
+	@include fonts;
+	border: 5px solid #fff;
+
+}
+
+#box7
+{
+	@include elementEaseInOut(background);
+	@include margin_total;
+    
+	background-color: rgba(60,155,102,0.7); //5f98c6; 
+	
+	flex: 1;
+    
+	width: $width_box7;
+
+	margin-bottom: 2%;
+	border-radius: 5px;
+	color: #484848 ;
+	text-align: center;
+	@include fonts;
 	border: 5px solid #fff;
 	
-	@include fade-transition(background);
 
-}
-
-.btn
-{
-	@include buttonGradient;
-	margin-bottom: 5%;
-//	width: 70%;
-//	margin-left: 15%;
-//	margin-right: 15%
-}
-
-.btn:hover{
-	-webkit-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
-     -khtml-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
-       -moz-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
-         -o-box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
-            box-shadow:rgba(0,0,0,0.3) 0px 5px 5px, inset rgba(0,0,0,0.1) 0px -10px 20px;
-	
-	color:#fff;
-    background-position:0 0, 0 0;
-    -webkit-transition-duration:0.3s;
-       -moz-transition-duration:0.3s;
-            transition-duration:0.3s;
-}
-
-.col-4:hover,
-.col-3:hover
-{
-	background-color: rgba(95,152,198,0.9);
 }
 
 
@@ -179,10 +240,10 @@
 .col-3:hover > .iconic
 {
 	//Animation delay
-	animation-delay: 0.05s;
-	-webkit-animation-delay: 0.05s;
-	-moz-animation-delay: 0.05s;
-	animation-delay: 0.05s;
+	animation-delay: 0.01s;
+	-webkit-animation-delay: 0.01s;
+	-moz-animation-delay: 0.01s;
+	animation-delay: 0.01s;
 	
 	//Add key frame animation for swinging
 	-webkit-animation:swinging 1s ease-in-out 0s infinite;
@@ -198,107 +259,46 @@
   	-o-animation:  swinging 0.5s normal forwards;
 }
 
-.col-3 img {
-    display: block;
-    position: relative;
-	
-	transition: all 0.2s linear;
-    width: 80%;
-	margin: 10%;
-    height: 100%;
-}
-.col-3 h3 {
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    position: relative;
-    font-size: 17px;
-    //font-family: Raleway, serif;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    margin: 20px 0 0 0;
-	
-	transform: translateY(-100px);
-    opacity: 0;
-//    font-family: Raleway, serif;
-    transition: all 0.2s ease-in-out;
-}
 .col-3 p {
-    //font-family: Merriweather, serif;
-    //font-style: italic;
+  
     font-size: 14px;
     position: relative;
     color: #fff;
-//    padding: 0px 20px 0px;
-	padding-top: 2%;
+
+	padding-top: 2.5%;
     text-align: center;
 	
 	transform: translateY(100px);
     opacity: 0;
-    transition: all 0.2s linear;
-}
-.col-3 a.info {
-    display: inline-block;
-    text-decoration: none;
-    padding: 7px 14px;
-    background: #000;
-    color: #fff;
-    font-family: Raleway, serif;
-    text-transform: uppercase;
-    box-shadow: 0 0 1px #000;
-	opacity: 0;
-    transition: all 0.2s ease-in-out;
-}
-.col-3 a.info:hover {
-    box-shadow: 0 0 5px #000;
-}
-/* */
-
-.col-3:hover img { 
-    transform: scale(1.1);
-} 
-.col-3:hover .mask { 
-    opacity: 1;
-}
-.col-3:hover h3,
-.col-3:hover p,
-.col-3:hover a.info {
-    opacity: 1;
-    transform: translateY(0px);
-}
-.col-3:hover p {
-    transition-delay: 0.1s;
-}
-.col-3:hover a.info {
-    transition-delay: 0.2s;
+    transition: all 0.4s linear;
 }
 
-///
+
 
 /******** responsive layout *******/
 
-@media screen and (min-width: $breakpoint-mobile){
+@media screen and (min-width: $mobile_1){
   .container{
-    max-width: $breakpoint-mobile;
+    max-width: $mobile_1;
     margin: 0 auto;
   }
 }
 
-@media screen and (min-width: $breakpoint-small){
+@media screen and (min-width: $mobile_2){
   .container{
-    max-width: $breakpoint-small;
+    max-width: $mobile_2;
   }
 }
 
-@media screen and (min-width: $breakpoint-medium){
+@media screen and (min-width: $mobile_3){
   .container{
-    max-width: $breakpoint-medium;
+    max-width: $mobile_2;
   }
 }
 
-@media screen and (min-width: $breakpoint-large){
+@media screen and (min-width: $mobile_4){
   .container{
-    max-width: $breakpoint-large;
+    max-width: $mobile_2;
   }
 }
 

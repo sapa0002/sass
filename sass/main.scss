@@ -127,7 +127,7 @@
 	@include elementEaseInOut(background);
 	flex: 1;	
 	@include margin_total;
-	background-color: rgba(60,155,102,0.7); //5f98c6; 
+	background-color: rgba(100,55,150,0.1);  
 	
 	width: $width_box4;
 
@@ -146,7 +146,7 @@
 	@include elementEaseInOut(background);
     flex: 1;	
 	@include margin_total;
-	background-color: rgba(60,155,102,0.7); //5f98c6; 
+	background-color: rgba(100,55,150,0.1); 
 	
 	width: $width_box5;
 
@@ -164,8 +164,7 @@
 	@include elementEaseInOut(background);
 	flex: 1;	
 	@include margin_total;
-	background-color: rgba(60,155,102,0.7); //5f98c6; 
-	
+	background-color: rgba(100,55,150,0.1); 
 	width: $width_box6;
 
 	margin-bottom: 2%;
@@ -181,13 +180,9 @@
 {
 	@include elementEaseInOut(background);
 	@include margin_total;
-    
-	background-color: rgba(60,155,102,0.7); //5f98c6; 
-	
+	background-color: rgba(100,55,150,0.1); 
 	flex: 1;
-    
 	width: $width_box7;
-
 	margin-bottom: 2%;
 	border-radius: 5px;
 	color: #484848 ;
@@ -220,20 +215,20 @@
 @-moz-keyframes swinging{
 	
 	0% { -moz-transform: rotate(0); }
-	20% { -moz-transform: rotate(7deg); }
-	40% { -moz-transform: rotate(-5deg); }
-	60% { -moz-transform: rotate(3deg); }
-	80% { -moz-transform: rotate(-1); } 
+	20% { -moz-transform: rotate(10deg); }
+	40% { -moz-transform: rotate(-10deg); }
+	60% { -moz-transform: rotate(10deg); }
+	80% { -moz-transform: rotate(-10); } 
 	100% { -moz-transform: rotate(0); }
 }
 
 @keyframes swinging{
 
 	0% { transform: rotate(0); }
-	20% { transform: rotate(7deg); }
-	40% { transform: rotate(-5deg); }
-	60% { transform: rotate(3deg); }
-	80% { transform: rotate(-1); } 
+	20% { transform: rotate(10deg); }
+	40% { transform: rotate(-10deg); }
+	60% { transform: rotate(10deg); }
+	80% { transform: rotate(-1deg); } 
 	100% { transform: rotate(0); }
 }
 
@@ -244,31 +239,29 @@
 	-webkit-animation-delay: 0.8s;
 	-moz-animation-delay: 0.8s;
 	animation-delay: 0.8s;
-	
+
+	-webkit-animation: swinging 0.5s normal forwards; 
+  	-moz-animation:  swinging 0.5s normal forwards;
+  	-o-animation:  swinging 0.5s normal forwards;
+    
 	-webkit-animation:swinging 1s ease-in-out 0s infinite;
 	-moz-animation:swinging 1s ease-in-out 0s infinite;
 	animation:swinging 1s ease-in-out 0s infinite;
 	-webkit-transform-origin:50% 0;
 	-moz-transform-origin:50% 0;
 	transform-origin:50% 0;
-
-	-webkit-animation: swinging 0.5s normal forwards; 
-  	-moz-animation:  swinging 0.5s normal forwards;
-  	-o-animation:  swinging 0.5s normal forwards;
 }
 
 .col-3 p {
   
-    font-size: 14px;
     position: relative;
     color: #fff;
-
-	padding-top: 2.5%;
-    text-align: center;
-	
-	transform: translateY(100px);
     opacity: 0;
+	padding-top: 2.5%;
+     font-size: 14px;
     transition: all 0.4s linear;
+	transform: translateY(100px);
+     text-align: center; 
 }
 
 

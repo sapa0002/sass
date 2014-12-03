@@ -20,7 +20,7 @@
 .wrapper
 {
 	overflow:auto;
-	background-color: rgba(300,150,190,0.8); // #dfbf5c  ;
+	background-color: rgba(300,150,190,0.8); 
 }
 
 
@@ -266,7 +266,7 @@
 
 
 
-/******** responsive layout *******/
+/******* responsive design *******/
 
 @media screen and (min-width: $mobile_1){
   .wrapper{
@@ -293,10 +293,10 @@
   }
 }
 
-/* =========== sticky footer =========== */
+/* === sticky footer === */
 
 @import 'sticky-footer';
 
-/* =========== normalize style =========== */
+/* === normalize style === */
 
 @import 'normalize';

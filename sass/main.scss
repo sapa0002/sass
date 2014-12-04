@@ -27,6 +27,7 @@
 .box p
 {
 	margin:0 4% 4% 4%;
+    top: -100px;
 	text-align: left;
 }
 
@@ -192,14 +193,26 @@
 	
 
 }
+ .fade{
+    opacity: 0;
+     transition:opacity .25s ease-in-out;
+     -moz-transition:opacity .25s ease-in-out;
+     -webkit-transition: opacity .25s ease-in-out;
+ }
 
+
+.fadeTrigger:hover{
+    .fade{
+        opacity:1;
+    }
+}
 
 .swing{
 	-webkit-animation:swinging 10s ease-in-out 0s infinite;
 	-moz-animation:swinging 10s ease-in-out 0s infinite;
 	animation:swinging 10s ease-in-out 0s infinite;
-	-webkit-transform-origin:50% 0;
-	-moz-transform-origin:50% 0;
+	-webkit-transform-origin:30% 0;
+	-moz-transform-origin:30% 0;
 	transform-origin:50% 0;
 }
 
@@ -269,27 +282,45 @@
 /******* responsive design *******/
 
 @media screen and (min-width: $mobile_1){
-  .wrapper{
-    max-width: $mobile_1;
-    margin: 0 auto;
-  }
+.wrapper{
+      
+    .col-3{  
+       width: 96%;
+	   padding-left: 2%;
+	   padding-right: 2%;
+	   padding-bottom: 2%;
+	   height: auto;
+     }
+    .col-4{  
+       width: 96%;
+	   padding-left: 2%;
+	   padding-right: 2%;
+	   padding-bottom: 2%;
+	   height: auto;
+     }
+}
 }
 
-@media screen and (min-width: $mobile_2){
+@media screen and (min-width: $mobile_2) and (max-width: $mobile_3){
   .wrapper{
-    max-width: $mobile_2;
+      
+    .col-3{  
+       margin-left: 2%;
+	   width: 32%;
+	   float:left;
+      }
   }
 }
 
 @media screen and (min-width: $mobile_3){
   .wrapper{
-    max-width: $mobile_3;
+    max-width: $mobile_4;
   }
 }
 
 @media screen and (min-width: $mobile_4){
   .wrapper{
-    max-width: $mobile_4;
+    max-width: 100%;
   }
 }
 

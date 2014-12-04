@@ -19,6 +19,7 @@
 
 .box p {
   margin: 0 4% 4% 4%;
+  top: -100px;
   text-align: left; }
 
 .masthead {
@@ -114,7 +115,7 @@
   flex: 1;
   margin-left: 3%;
   margin-top: 3%;
-  background-color: rgba(60, 155, 102, 0.7);
+  background-color: rgba(100, 55, 150, 0.1);
   width: 23%;
   margin-bottom: 2%;
   border-radius: 5px;
@@ -132,7 +133,7 @@
   flex: 1;
   margin-left: 3%;
   margin-top: 3%;
-  background-color: rgba(60, 155, 102, 0.7);
+  background-color: rgba(100, 55, 150, 0.1);
   width: 23%;
   margin-bottom: 2%;
   border-radius: 5px;
@@ -150,7 +151,7 @@
   flex: 1;
   margin-left: 3%;
   margin-top: 3%;
-  background-color: rgba(60, 155, 102, 0.7);
+  background-color: rgba(100, 55, 150, 0.1);
   width: 23%;
   margin-bottom: 2%;
   border-radius: 5px;
@@ -167,7 +168,7 @@
   transition: background 0.25s ease-in-out;
   margin-left: 3%;
   margin-top: 3%;
-  background-color: rgba(60, 155, 102, 0.7);
+  background-color: rgba(100, 55, 150, 0.1);
   flex: 1;
   width: 23%;
   margin-bottom: 2%;
@@ -177,97 +178,114 @@
   font-family: 'Lobster', cursive;
   border: 5px solid #fff; }
 
+.fade {
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out; }
+
+.fadeTrigger:hover .fade {
+  opacity: 1; }
+
 .swing {
   -webkit-animation: swinging 10s ease-in-out 0s infinite;
   -moz-animation: swinging 10s ease-in-out 0s infinite;
   animation: swinging 10s ease-in-out 0s infinite;
-  -webkit-transform-origin: 50% 0;
-  -moz-transform-origin: 50% 0;
+  -webkit-transform-origin: 30% 0;
+  -moz-transform-origin: 30% 0;
   transform-origin: 50% 0; }
 
 @-webkit-keyframes swinging {
   0% {
     -webkit-transform: rotate(0); }
   20% {
-    -webkit-transform: rotate(7deg); }
+    -webkit-transform: rotate(10deg); }
   40% {
-    -webkit-transform: rotate(-5deg); }
+    -webkit-transform: rotate(-10deg); }
   60% {
-    -webkit-transform: rotate(3deg); }
+    -webkit-transform: rotate(10deg); }
   80% {
-    -webkit-transform: rotate(-1); }
-  /* Come to rest at 50%. The rest is just stillness */
+    -webkit-transform: rotate(-10); }
   100% {
     -webkit-transform: rotate(0); } }
 @-moz-keyframes swinging {
   0% {
     -moz-transform: rotate(0); }
   20% {
-    -moz-transform: rotate(7deg); }
+    -moz-transform: rotate(10deg); }
   40% {
-    -moz-transform: rotate(-5deg); }
+    -moz-transform: rotate(-10deg); }
   60% {
-    -moz-transform: rotate(3deg); }
+    -moz-transform: rotate(10deg); }
   80% {
-    -moz-transform: rotate(-1); }
-  /* Come to rest at 50%. The rest is just stillness */
+    -moz-transform: rotate(-10); }
   100% {
     -moz-transform: rotate(0); } }
 @keyframes swinging {
   0% {
     transform: rotate(0); }
   20% {
-    transform: rotate(7deg); }
+    transform: rotate(10deg); }
   40% {
-    transform: rotate(-5deg); }
+    transform: rotate(-10deg); }
   60% {
-    transform: rotate(3deg); }
+    transform: rotate(10deg); }
   80% {
-    transform: rotate(-1); }
-  /* Come to rest at 50%. The rest is just stillness */
+    transform: rotate(-1deg); }
   100% {
     transform: rotate(0); } }
 .col-3:hover > .iconic {
-  animation-delay: 0.01s;
-  -webkit-animation-delay: 0.01s;
-  -moz-animation-delay: 0.01s;
-  animation-delay: 0.01s;
+  animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  -webkit-animation: swinging 0.5s normal forwards;
+  -moz-animation: swinging 0.5s normal forwards;
+  -o-animation: swinging 0.5s normal forwards;
   -webkit-animation: swinging 1s ease-in-out 0s infinite;
   -moz-animation: swinging 1s ease-in-out 0s infinite;
   animation: swinging 1s ease-in-out 0s infinite;
   -webkit-transform-origin: 50% 0;
   -moz-transform-origin: 50% 0;
-  transform-origin: 50% 0;
-  -webkit-animation: swinging 0.5s normal forwards;
-  -moz-animation: swinging 0.5s normal forwards;
-  -o-animation: swinging 0.5s normal forwards; }
+  transform-origin: 50% 0; }
 
 .col-3 p {
-  font-size: 14px;
   position: relative;
   color: #fff;
-  padding-top: 2.5%;
-  text-align: center;
-  transform: translateY(100px);
   opacity: 0;
-  transition: all 0.4s linear; }
+  padding-top: 2.5%;
+  font-size: 14px;
+  transition: all 0.4s linear;
+  transform: translateY(100px);
+  text-align: center; }
 
-/******** responsive layout *******/
-@media screen and (min-width: 300px) {
-  .container {
-    max-width: 300px;
-    margin: 0 auto; } }
-@media screen and (min-width: 600px) {
-  .container {
-    max-width: 600px; } }
-@media screen and (min-width: 800px) {
-  .container {
-    max-width: 600px; } }
+/******* responsive design *******/
+@media screen and (min-width: 400px) {
+  .wrapper .col-3 {
+    width: 96%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    height: auto; }
+  .wrapper .col-4 {
+    width: 96%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    height: auto; } }
+@media screen and (min-width: 599px) and (max-width: 959px) {
+  .wrapper .col-3 {
+    margin-left: 2%;
+    width: 32%;
+    float: left; } }
+@media screen and (min-width: 959px) {
+  .wrapper {
+    max-width: 960px; } }
 @media screen and (min-width: 960px) {
-  .container {
-    max-width: 600px; } }
-/* =========== sticky footer =========== */
-/* =========== Sticky Footer =========== */
+  .wrapper {
+    max-width: 100%; } }
+/* === sticky footer === */
+/* ====== sticky footer ==== */
 html {
   position: relative;
   min-height: 100%; }
@@ -286,7 +304,7 @@ html {
   font-family: 'Lobster', cursive;
   border-top: 1px solid #eee; }
 
-/* =========== normalize style =========== */
+/* === normalize style === */
 article,
 aside,
 details,

@@ -21,6 +21,7 @@
 {
 	overflow:auto;
 	background-color: rgba(300,150,190,0.8); 
+    width: 100%;
 }
 
 
@@ -50,16 +51,15 @@
 	margin-right: 2%;
 }
 
-#box1
+.col-3
 {
     @include fonts;
 	@include elementEaseInOut(background);
-	flex: 1;
+
 	@include margin_total;
 	padding-top: 2%;
 	background-color: rgba(160,55,100,0.7);
-	width: $width_box1;
-	float: left;
+
 	border-radius: 5px;
 
 	color: #484848 ;
@@ -69,68 +69,19 @@
     overflow: hidden;
     position: relative;
     box-shadow: 1px 1px 2px #e6e6e6;
-    cursor: pointer;
+
 	
 
 }
 
-#box2
-{   
-    @include fonts;
-	@include elementEaseInOut(background);
-	flex: 1;
-	@include margin_total;
-	padding-top: 2%;
-	background-color: rgba(160,55,100,0.7); 
-	width: $width_box2;
-	float: left;
-	border-radius: 5px;
-
-	color: #484848 ;
-	text-align: center;
-
-    border: 10px solid #fff;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 2px 2px 2px #e6e6e6;
-    cursor: pointer;
-	
-	
-}      
-
-#box3
-{
-    @include fonts;
-	@include elementEaseInOut(background);
-	flex: 1;
-	@include margin_total;
-	padding-top: 2%;
-	background-color: rgba(160,55,100,0.7);
-	width: $width_box3;
-	float: left;
-	border-radius: 5px;
-
-	color: #484848 ;
-	text-align: center;
-
-    border: 10px solid #fff;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 2px 2px 2px #e6e6e6;
-    cursor: pointer;
-		
-	
-}
-
-
-#box4
+.col-4
 {	
 	@include elementEaseInOut(background);
-	flex: 1;	
+	
 	@include margin_total;
 	background-color: rgba(100,55,150,0.1);  
 	
-	width: $width_box4;
+
 
 	margin-bottom: 2%;
 	border-radius: 5px;
@@ -141,58 +92,7 @@
 
 }
 
-#box5
-{
-     	
-	@include elementEaseInOut(background);
-    flex: 1;	
-	@include margin_total;
-	background-color: rgba(100,55,150,0.1); 
-	
-	width: $width_box5;
 
-	margin-bottom: 2%;
-	border-radius: 5px;
-	color: #484848 ;
-	text-align: center;
-	@include fonts;
-	border: 5px solid #fff;
-
-}
-
-#box6
-{
-	@include elementEaseInOut(background);
-	flex: 1;	
-	@include margin_total;
-	background-color: rgba(100,55,150,0.1); 
-	width: $width_box6;
-
-	margin-bottom: 2%;
-	border-radius: 5px;
-	color: #484848 ;
-	text-align: center;
-	@include fonts;
-	border: 5px solid #fff;
-
-}
-
-#box7
-{
-	@include elementEaseInOut(background);
-	@include margin_total;
-	background-color: rgba(100,55,150,0.1); 
-	flex: 1;
-	width: $width_box7;
-	margin-bottom: 2%;
-	border-radius: 5px;
-	color: #484848 ;
-	text-align: center;
-	@include fonts;
-	border: 5px solid #fff;
-	
-
-}
  .fade{
     opacity: 0;
      transition:opacity .25s ease-in-out;
@@ -279,49 +179,69 @@
 
 
 
+
 /******* responsive design *******/
 
-@media screen and (min-width: $mobile_1){
+@media screen and (max-width: $mobile_1) {
+
 .wrapper{
-      
-    .col-3{  
-       width: 96%;
-	   padding-left: 2%;
-	   padding-right: 2%;
-	   padding-bottom: 2%;
-	   height: auto;
-     }
-    .col-4{  
-       width: 96%;
-	   padding-left: 2%;
-	   padding-right: 2%;
-	   padding-bottom: 2%;
-	   height: auto;
-     }
+    .col-3{ 
+	width: 96%;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-bottom: 2%;
 }
+    
+    .col-4{ 
+	width: 96%;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-bottom: 2%;
+
 }
 
-@media screen and (min-width: $mobile_2) and (max-width: $mobile_3){
-  .wrapper{
-      
-    .col-3{  
-       margin-left: 2%;
-	   width: 32%;
-	   float:left;
-      }
-  }
+    }
 }
+@media screen and (min-width: $mobile_2) and (max-width: $mobile_3) {
 
-@media screen and (min-width: $mobile_3){
-  .wrapper{
-    max-width: $mobile_4;
-  }
+.wrapper{
+    
+    .col-3{
+	width: 48%;
+	float: left;
+	padding-left: 2%;
+	padding-bottom: 2%;
+    }	
+    
+    .col-4{
+	width: 48%;
+	float: left;
+	padding-left: 2%;
+	padding-bottom: 2%;
+     }
+    }
 }
 
 @media screen and (min-width: $mobile_4){
-  .wrapper{
-    max-width: 100%;
-  }
+.wrapper{
+    
+.col-3{	
+	width: 90%;
+
+	padding-left: 2%;
+	padding-bottom: 2%;
+	
+}
+    
+    .col-4{	
+	width: 24%;
+	float: left;
+	padding-left: 2%;
+	padding-bottom: 2%;
+	
+    }
+
+    }
 }
 
 /* === sticky footer === */
